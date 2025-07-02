@@ -8,41 +8,6 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet" />
    <title>Birthday Gift Site</title>
-
-   <style>
-      .play-button {
-         display: inline-block;
-         padding: 16px 30px;
-         margin: 20px auto;
-         font-size: 20px;
-         font-family: 'Happy Monkey', cursive;
-         color: white;
-         background: linear-gradient(45deg, #ff4d4d, #ff1a1a);
-         border: none;
-         border-radius: 30px;
-         cursor: pointer;
-         box-shadow: 0 0 15px rgba(255, 50, 50, 0.7);
-         transition: transform 0.3s ease, box-shadow 0.3s ease;
-         animation: pulseRed 1.5s infinite;
-      }
-
-      .play-button:hover {
-         transform: scale(1.1);
-         box-shadow: 0 0 25px rgba(255, 0, 0, 1);
-      }
-
-      @keyframes pulseRed {
-         0% {
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-         }
-         50% {
-            box-shadow: 0 0 20px rgba(255, 0, 0, 1);
-         }
-         100% {
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-         }
-      }
-   </style>
 </head>
 <body onload="displayBirthday()">
 
@@ -88,7 +53,7 @@
 
    <!-- Footer -->
    <div class="footer">
-      <p>created by wakawaka</a></p>
+      <p>created by wakawaka</p>
    </div>
 
    <!-- Audio -->
@@ -100,7 +65,7 @@
          const name = "Anna 💖";
          const age = 21;
          const dob = "1 July 2004";
-         const imagePath = "images/hehehe.png"; // Ensure this exists
+         const imagePath = "images/hehehe.png"; // Ensure this file exists
 
          document.getElementById("birthdayName").textContent = `Happy Birthday, ${name}!`;
          document.getElementById("birthdayAge").textContent = `You are ${age} years old 🎂`;
@@ -113,7 +78,7 @@
          audio.play()
             .then(() => console.log("Music playing"))
             .catch(err => {
-               alert("Browser blocked auto-play. Please click again.");
+               alert("Browser blocked auto-play. Please click the button again.");
                console.error(err);
             });
       }
