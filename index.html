@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="styles.css" />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet" />
+   <title>Birthday Gift Site</title>
+
+   <style>
+      .play-button {
+         display: inline-block;
+         padding: 16px 30px;
+         margin: 20px auto;
+         font-size: 20px;
+         font-family: 'Happy Monkey', cursive;
+         color: white;
+         background: linear-gradient(45deg, #ff4d4d, #ff1a1a);
+         border: none;
+         border-radius: 30px;
+         cursor: pointer;
+         box-shadow: 0 0 15px rgba(255, 50, 50, 0.7);
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+         animation: pulseRed 1.5s infinite;
+      }
+
+      .play-button:hover {
+         transform: scale(1.1);
+         box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+      }
+
+      @keyframes pulseRed {
+         0% {
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+         }
+         50% {
+            box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+         }
+         100% {
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+         }
+      }
+   </style>
+</head>
+<body onload="displayBirthday()">
+
+   <!-- Birthday Header -->
+   <div class="header" id="birthdayHeader">
+      <h1 id="birthdayName"></h1>
+      <img id="birthdayImage" src="" alt="Birthday Image" class="avatar" />
+      <h2 class="age" id="birthdayAge"></h2>
+      <h4 class="date" id="birthdayDate"></h4>
+   </div>
+
+   <!-- Red Themed Play Button -->
+   <div style="text-align: center;">
+      <div class="play-button" onclick="playMusic()">🎵 Play Birthday Song 🎉</div>
+   </div>
+
+   <!-- Gift Sections -->
+   <div class="gift-section">
+      <h2 class="gift-title">Here's how happy I am for you today 🥳</h2>
+      <h3 class="gift-hint">(Hover over the gift)</h3>
+      <div class="happy-gif gift-cover"></div>
+   </div>
+
+   <div class="gift-section">
+      <h2 class="gift-title">How people react when you enter the room 😍</h2>
+      <div class="respect-gif gift-cover"></div>
+   </div>
+
+   <div class="gift-section">
+      <h2 class="gift-title">If I had to describe you with ONE word 👇</h2>
+      <div class="genius-gif gift-cover"></div>
+   </div>
+
+   <div class="gift-section">
+      <h2 class="gift-title">The only person as badass as you 💪</h2>
+      <div class="goat-gif gift-cover"></div>
+   </div>
+
+   <div class="gift-section">
+      <h2 class="gift-title">This one's for you, my friend 👊</h2>
+      <div class="cheers-gif gift-cover"></div>
+   </div>
+
+   <!-- Footer -->
+   <div class="footer">
+      <p>created by wakawaka</a></p>
+   </div>
+
+   <!-- Audio -->
+   <audio id="birthdayAudio" src="happybirthday.mp3" preload="auto"></audio>
+
+   <!-- Script -->
+   <script>
+      function displayBirthday() {
+         const name = "Anna 💖";
+         const age = 21;
+         const dob = "1 July 2004";
+         const imagePath = "images/hehehe.png"; // Ensure this exists
+
+         document.getElementById("birthdayName").textContent = `Happy Birthday, ${name}!`;
+         document.getElementById("birthdayAge").textContent = `You are ${age} years old 🎂`;
+         document.getElementById("birthdayDate").textContent = `Born on: ${dob}`;
+         document.getElementById("birthdayImage").src = imagePath;
+      }
+
+      function playMusic() {
+         const audio = document.getElementById("birthdayAudio");
+         audio.play()
+            .then(() => console.log("Music playing"))
+            .catch(err => {
+               alert("Browser blocked auto-play. Please click again.");
+               console.error(err);
+            });
+      }
+   </script>
+
+</body>
+</html>
